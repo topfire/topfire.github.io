@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Main</title>
+    <link rel=stylesheet href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.9.1.js"></script>
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script src="jquery/jquery-mobile-navbar.js"></script>
+    <style>
+        .ui-navbar .ui-btn-text { font-size: 12px; }
+
+        #my_two_info{
+            text-indent: each-line;
+            font-weight: 500;
+            font-size:20px;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+</head>
+<body>
+<div data-role="page" id="pageone">
+    <div data-role="header" data-position="fixed">
+        <h1>装修防坑手册</h1>
+        <div data-role="navbar" id="navbar" >
+            <ul id="head_list" class="ui-grid-b">
+                <li><a href="#anylink">首页</a></li>
+                <li><a href="#anylink">首页</a></li>
+                <li><a href="#anylink">首页</a></li>
+            </ul>
+        </div>
+    </div>
+    <div data-role="content">
+        <ol data-role="listview" id="list_info"></ol>
+    </div>
+</div>
+
+<div data-role="page" id="pagetwo">
+    <div data-role="header" data-position="fixed">
+        <h1 id="my_two_title">two title</h1>
+        <a href="#" data-role="button" data-rel="back">返回</a>
+    </div>
+
+    <div data-role="content">
+        <pre id="my_two_info"></pre>
+    </div>
+
+</div>
+
+<script>
+    var dataOb = {},currentNav=''
+    $(function() {
+        $.ajax({
+            url: 'content.xml',
+            type: 'GET',
+            dataType: 'xml',
+            timeout: 5000,  //设定超时
+            cache: false,   //禁用缓存
+            error: function(xml) {
+                alert("加载XML文档出错!");
+            },
+            success: GetXmlComplete   //设置成功后回调函数
+        });
+    });
+    function GetXmlComplete(xml){
+        $('#head_list').empty()
+        var startNav = ''
+        $(xml).find("title").each(function() {
+            var title = $(this).attr("id");
+            startNav = startNav || title
+            dataOb[title] = dataOb[title] || {}
+            $('#head_list').append('<li><a class="my_titlehead" data-icon="bullets">'+title+ '</a></li>')
+            $(this).find("list").each(function() {
+                var list_id = $(this).attr("id");   //需要注意什么11
+                var desTxt = $(this).children("des").text();
+                var picTxt = $(this).children("pic").text();
+                dataOb[title][list_id] = [picTxt, desTxt]
+            })
+        });
+        $('#navbar').navbar('refresh');
+        showTitle(startNav)
+
+    }
+    function showTitle(id){
+        $('#list_info').empty()
+        $('.my_titlehead:contains("'+id+'")').addClass('ui-btn-active ui-state-persist')
+                .parent().siblings().children('a').removeClass('ui-btn-active ui-state-persist')
+        currentNav = id
+        for(var index in dataOb[currentNav]){
+            $('#list_info').append($("<li><a href='#pagetwo' class='my_listInfo'>"+index+"</a></li>"))
+        }
+        $('#list_info').listview('refresh')
+    }
+
+    $(document).on("tap",function(e){
+        if($(e.target).is('.my_titlehead')){
+            showTitle($(e.target).text())
+        }
+        if($(e.target).is('.my_listInfo')){
+            console.log('show', $(e.target).text())
+            var title = $(e.target).text()
+            $('#my_two_title').text(title)
+            $('#my_two_info').text(dataOb[currentNav][title][1])
+
+        }
+    });
+    $(document).bind('contextmenu',function(e){
+        return false;
+    });
+</script>
+</body>
+</html>
