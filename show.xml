@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProductsList>
+   	
+	<Product id="swf/EggGame.swf">
+   	    <title><![CDATA[孵蛋游戏]]> </title>
+		<width><![CDATA[680]]> </width>
+		<height><![CDATA[500]]> </height>
+		<type><![CDATA[swf]]> </type>
+		<frameRate><![CDATA[12]]> </frameRate>
+		<bgColor><![CDATA[0x000000]]> </bgColor>
+		<desc><![CDATA[孵蛋游戏原型<br><br>操作方法:<br>鼠标点击左侧格子里的蛋组拾起<br>放置到中间格子里<br><br>当横斜反斜3种方向凑够一条直线的时候即可消除。<br><br>可用鼠标滚轮转动蛋组]]> </desc>
+		<link><![CDATA[www.163.com]]> </link>
+	</Product>
+	<Product id="swf/5ziqi.swf">
+   	    <title><![CDATA[五子棋]]> </title>
+		<width><![CDATA[600]]> </width>
+		<height><![CDATA[400]]> </height>
+		<type><![CDATA[swf]]> </type>
+		<frameRate><![CDATA[12]]> </frameRate>
+		<bgColor><![CDATA[0x000000]]> </bgColor>
+		<desc><![CDATA[个人作品。AS2作品，蛮久以前的了，带人工智能<br><br>操作方法:<br>鼠标点击对用区域即可添加棋子]]> </desc>
+		<link><![CDATA[www.163.com]]> </link>
+	</Product>
+	<Product id="swf/TD.swf">
+		<title><![CDATA[炮塔防守游戏原型]]> </title>
+		<width><![CDATA[700]]> </width>
+		<height><![CDATA[500]]> </height>
+		<type><![CDATA[swf]]> </type>
+		<frameRate><![CDATA[12]]> </frameRate>
+		<bgColor><![CDATA[0x000000]]> </bgColor>
+		<desc><![CDATA[个人作品。A*算法实践品，多物体自动寻址<br><br>操作方法:<br>鼠标点击对应区域增加障碍墙，先选择右上方的炮台再点击对应区域即可建造对应的炮台。在改变路径的时候可以看到所有的老鼠都会相对应的去寻找自己新的路线。<br<br>...当出现安全提示的时候不要管他...那是我以前做的ASP+database做的访问记录系统，在更换主页服务器的时候东西失效了>]]> </desc>
+		<link><![CDATA[www.163.com]]> </link>
+	</Product>	
+	 
+	<Product id="pic/last.JPG">
+		<title><![CDATA[谢谢欣赏]]> </title>
+		<width><![CDATA[700]]> </width>
+		<height><![CDATA[550]]> </height>
+		<type><![CDATA[bmp]]> </type>
+		<frameRate><![CDATA[12]]> </frameRate>
+		<bgColor><![CDATA[0x000000]]> </bgColor>
+		<desc><![CDATA[线上展示的大部分是个人作品，公司做的项目不便于展示。<br><br>操作方法:<br>无]]> </desc>
+		<link><![CDATA[www.163.com]]> </link>
+	</Product>	
+	<!--
+	<Product id="swf/Main.swf">
+		<title><![CDATA[移动射击游戏原型]]> </title>
+		<width><![CDATA[700]]> </width>
+		<height><![CDATA[550]]> </height>
+		<type><![CDATA[swf]]> </type>
+		<frameRate><![CDATA[60]]> </frameRate>
+		<bgColor><![CDATA[0x000000]]> </bgColor>
+		<desc><![CDATA[个人作品。flex的as project开发,pureMVC架构，内存回收，多物体移动，大量物体的碰撞检测效率优化。<br><br>操作方法:<br>asdw 4个键控制方向，鼠标控制射击方位，按下鼠标左键射击，鼠标滚轮可以调整当前子弹的属性，切换武器用数字键1和2（当前只有2种武器）。因为一些代码原因，如果看不到游戏请升级FLASH PLAYER到10]]> </desc>
+		<link><![CDATA[www.163.com]]> </link>
+	</Product>
+	-->
+</ProductsList>
+
+
