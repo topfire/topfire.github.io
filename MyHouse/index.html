@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Main</title>
     <link rel=stylesheet href="jquery/jquery.mobile-1.4.5.min.css">
-    <script src="jquery/jquery-1.9.1.js"></script>
-    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
-    <script src="jquery/jquery-mobile-navbar.js"></script>
+    <script src="./jquery/jquery-1.9.1.js"></script>
+    <script src="./jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script src="./jquery/jquery-mobile-navbar.js"></script>
     <style>
         .ui-navbar .ui-btn-text { font-size: 12px; }
 
@@ -53,7 +53,7 @@
     var dataOb = {},currentNav=''
     $(function() {
         $.ajax({
-            url: 'content.xml',
+            url: './content.xml',
             type: 'GET',
             dataType: 'xml',
             timeout: 5000,  //设定超时
